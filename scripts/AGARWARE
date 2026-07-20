@@ -1,0 +1,2 @@
+getgenv().script='AGARWARE';
+loadstring(game:HttpGet([[https://raw.githubusercontent.com/agarv0/-/main/loader]]))();
