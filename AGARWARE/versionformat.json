@@ -1,0 +1,18 @@
+{
+	"Version": "4.0.0  >  v4.0.0",
+	"Show": true,
+
+	"New_Game_Support": {"show": false,
+		"game": "",
+		"text": ""
+	},
+	"New_Features": {"show": false,
+		"text": ""
+	},
+	"Improvements_Bug_Fixes": {"show": false,
+		"text": ""
+	},
+	"Changes_Removals": {"show": false,
+		"text": ""
+	}
+}
