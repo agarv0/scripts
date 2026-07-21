@@ -1,0 +1,108 @@
+--[[
+https://discord.gg/7fDasxV2Ht                                        
+                                                                                    
+  :::.      .,-:::::/   :::.    :::::::..       .::    .   .::::::.    :::::::..  .,::::::  
+  ;;`;;   ,;;-'````'    ;;`;;   ;;;;``;;;;      ';;,  ;;  ;;;' ;;`;;   ;;;;``;;;; ;;;;''''  
+ ,[[ '[[, [[[   [[[[[[/,[[ '[[,  [[[,/[[['       '[[, [[, [[' ,[[ '[[,  [[[,/[[['  [[cccc   
+c$$$cc$$$c"$$c.    "$$c$$$cc$$$c $$$$$$c           Y$c$$$c$P c$$$cc$$$c $$$$$$c    $$""""   
+ 888   888,`Y8bo,,,o88o888   888,888b "88bo,        "88"888   888   888,888b "88bo,888oo,__ 
+ YMM   ""`   `'YMUP"YMMYMM   ""` MMMM   "W"          "M "M"   YMM   ""` MMMM   "W" """"YUMMM                                                      
+ 
+version: 6ezcarkulit6606i474q
+--]]
+
+--  |  LOCAL SCRIPTS: 1  |  INSTANCES: 3  |  MODULES: 0  |  --
+
+local _AGARWARE={};
+local _r={};
+local _req=require;
+require=function(m) if _r[m] then return _r[m]() end return _req(m) end;
+local function _rstr() local c="abcdefghijklmnopqrstuvwxyz0123456789" local s="" for i=1,math.random(10,20) do s=s..c:sub(math.random(1,#c),math.random(1,#c)) end return s end;
+local _G=game:GetService("RunService"):IsStudio() and _G or getfenv(0);
+_AGARWARE["1"]=Instance.new("ScreenGui");
+pcall(protect_gui,_AGARWARE["1"]);
+_AGARWARE["1"].Parent=game:GetService("CoreGui");
+_AGARWARE["1"].Name=_rstr();
+_AGARWARE["1"]["ScreenInsets"]=Enum.ScreenInsets.DeviceSafeInsets;
+_AGARWARE["1"]["ResetOnSpawn"]=false;
+_AGARWARE["1"]["IgnoreGuiInset"]=true;
+_AGARWARE["1"]["DisplayOrder"]=100;
+_AGARWARE["1"]["ZIndexBehavior"]=Enum.ZIndexBehavior.Sibling;
+_AGARWARE["2"]=Instance.new("TextLabel",_AGARWARE["1"]);
+_AGARWARE["2"].Name="TextLabel";
+_AGARWARE["2"]["TextWrapped"]=true;
+_AGARWARE["2"]["BorderSizePixel"]=0;
+_AGARWARE["2"]["RichText"]=true;
+_AGARWARE["2"]["TextScaled"]=true;
+_AGARWARE["2"]["BackgroundColor3"]=Color3.fromRGB(255, 255, 255);
+_AGARWARE["2"]["FontFace"]=Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+_AGARWARE["2"]["Size"]=UDim2.new(0, 300, 0, 65);
+_AGARWARE["2"]["TextSize"]=14;
+_AGARWARE["2"]["BorderColor3"]=Color3.fromRGB(0, 0, 0);
+_AGARWARE["2"]["Text"]=[[The creator of the script is in ur server.]];
+_AGARWARE["2"]["TextColor3"]=Color3.fromRGB(255, 255, 255);
+_AGARWARE["2"]["BackgroundTransparency"]=1;
+_AGARWARE["2"]["Position"]=UDim2.new(0.69357, 0, 0.59798, 0);
+_AGARWARE["3"]=Instance.new("UIStroke",_AGARWARE["2"]);
+_AGARWARE["3"].Name="UIStroke";
+_AGARWARE["4"]=Instance.new("LocalScript",_AGARWARE["1"]);
+_AGARWARE["4"].Name="main";
+do
+local function C_4()
+pcall(function()
+local script=_AGARWARE["4"];
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local screenGui = script:FindFirstAncestorWhichIsA("ScreenGui")
+local frame = script.Parent.TextLabel
+frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+frame.TextTransparency = 0
+local hue = 0
+local brightness = 0.09
+local speed = 1.5
+local destroytime = 8
+TweenService:Create(frame, TweenInfo.new(destroytime, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
+TweenService:Create(frame.UIStroke, TweenInfo.new(destroytime, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1}):Play()
+local startTime = tick()
+RunService.Heartbeat:Connect(function(dt)
+	if tick() - startTime >= destroytime - 0.01 then return end
+	hue = (hue + dt * speed) % 1
+	local color = Color3.fromHSV(hue, 1, 1)
+	frame.TextColor3 = color
+	frame.UIStroke.Color = Color3.fromHSV(hue, 1, 0.1)
+end)
+
+task.spawn(function()
+	task.wait(destroytime)
+	screenGui:Destroy()
+end)
+
+
+task.spawn(function()
+	warn("The creator of the script is in ur server.")
+end)
+
+
+task.spawn(function()
+	local sound = Instance.new("Sound")
+	sound.SoundId = "rbxassetid://1260807948"
+	sound.Volume = 0.7
+	sound.Parent = workspace
+	local reverb = Instance.new("ReverbSoundEffect")
+	reverb.DecayTime = 50
+	reverb.Density = 1
+	reverb.Diffusion = 1
+	reverb.DryLevel = 0
+	reverb.WetLevel = 0
+	reverb.Parent = sound
+	sound:Play()
+	task.wait(3)
+	TweenService:Create(sound, TweenInfo.new(destroytime - 5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Volume = 0}):Play()
+end)
+end)
+end;
+task.spawn(C_4)
+end;
+
+return _AGARWARE["1"], require;
