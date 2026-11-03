@@ -1,5 +1,25 @@
 -- https://raw.githubusercontent.com/88lkk/Pandaware/refs/heads/main/Main.lua
 
+--[[EXAMPLE
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/agarv0/scripts/refs/heads/main/lib/Pandaware.luau"))()
+local Window = Library:Window("Window")
+
+Window:Toggle("Toggle", function(Toggled)
+end)
+
+Window:Button("Button", function()
+end)
+
+Window:Dropdown("Dropdown", {"Option 1", "Option 2", "Option 3"}, function(Option)
+end)
+
+Window:Slider("Slider", 0, 100, 50, function(Number)
+end)
+]]
+
+
+
+
 ---------------------------
 -- 88lkk Util
 ---------------------------
